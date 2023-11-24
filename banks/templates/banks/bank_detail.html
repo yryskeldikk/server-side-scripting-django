@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bank Details</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap/dist/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="display-4">{{ bank.name }}</h1>
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Bank Information</h4>
+                <ul class="list-group">
+                    <li class="list-group-item"><strong>Swift Code:</strong> {{ bank.swift_code }}</li>
+                    <li class="list-group-item"><strong>Institution Number:</strong> {{ bank.inst_num }}</li>
+                    <li class="list-group-item"><strong>Description:</strong> {{ bank.description }}</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap/dist/js/bootstrap.min.js"></script>
+</body>
+</html>

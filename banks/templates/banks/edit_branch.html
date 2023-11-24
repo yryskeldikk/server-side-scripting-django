@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Update Branch</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <h2>Update Branch</h2>
+                {% for error in form.non_field_errors %}
+                    <div class="alert alert-danger">
+                        <strong>{{ error|escape }}</strong>
+                    </div>
+                {% endfor %}
+                <form class="container" action="{% url 'banks:branch-update' branch_id=branch_id %}" method="POST">
+                    {% csrf_token %}
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Branch Name:</label>
+                        {{form.name}}
+                    </div>
+                    {% for error in form.name.errors %}
+                        <div class="alert alert-danger">
+                            <strong>{{ error|escape }}</strong>
+                        </div>
+                    {% endfor %}
+                    <div class="mb-3">
+                        <label for="transit_num" class="form-label">Transit Number:</label>
+                        {{form.transit_num}}
+                    </div>
+                    {% for error in form.transit_num.errors %}
+                        <div class="alert alert-danger">
+                            <strong>{{ error|escape }}</strong>
+                        </div>
+                    {% endfor %}
+                    <div class="mb-3">
+                        <label for="address" class="form-label">Address:</label>
+                        {{form.address}}
+                    </div>
+                    {% for error in form.address.errors %}
+                        <div class="alert alert-danger">
+                            <strong>{{ error|escape }}</strong>
+                        </div>
+                    {% endfor %}
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email:</label>
+                        {{form.email}}
+                    </div>
+                    {% for error in form.email.errors %}
+                        <div class="alert alert-danger">
+                            <strong>{{ error|escape }}</strong>
+                        </div>
+                    {% endfor %}
+                    <div class="mb-3">
+                        <label for="capacity" class="form-label">Capacity:</label>
+                        {{form.capacity}}
+                    </div>
+                    {% for error in form.capacity.errors %}
+                        <div class="alert alert-danger">
+                            <strong>{{ error|escape }}</strong>
+                        </div>
+                    {% endfor %}
+                    <button type="submit" class="btn btn-primary" formnovalidate>Update Branch</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
